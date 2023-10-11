@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    transition: background-color 0.5s ease;
+  }
+  
+  select {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h2>Select Background Color</h2>
+
+<select id="colorSelect">
+  <option value="">-- Select Color --</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+  <option value="yellow">Yellow</option>
+</select>
+
+<script>
+  const colorSelect = document.getElementById("colorSelect");
+
+  // Array of color options and their corresponding values
+  const colorOptions = [
+    { label: "Red", value: "red" },
+    { label: "Blue", value: "blue" },
+    { label: "Green", value: "green" },
+    { label: "Yellow", value: "yellow" }
+  ];
+
+  // Add options to the select element
+  colorOptions.forEach(option => {
+    const optionElement = document.createElement("option");
+    optionElement.value = option.value;
+    optionElement.textContent = option.label;
+    colorSelect.appendChild(optionElement);
+  });
+
+  // Event listener for color selection
+  colorSelect.addEventListener("change", function() {
+    const selectedColor = colorSelect.value;
+    document.body.style.backgroundColor = selectedColor;
+  });
+</script>
+
+</body>
+</html>

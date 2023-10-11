@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Zoom</title>
+</head>
+<body>
+    <p id="p1" style="color:darkcyan">SILVER OAK UNIVERSITY</p>
+</body>
+<script>
+    var p1 = document.getElementById("p1");
+    var i=15;
+    var a = setInterval(() => {
+        p1.style.fontSize=i+"px";
+        i=i+5;
+        if(i==150){
+            i=15;
+            // clearInterval(a)
+        }
+        
+    },50);
+</script>
+</html>

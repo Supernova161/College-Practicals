@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Generator</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            height: 100px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inputValue" placeholder="Enter a value">
+    <button onclick="pushValue()">Push</button>
+    <button onclick="popValue()">Pop</button>
+    <button onclick="unshiftValue()">Unshift</button>
+    <button onclick="shiftValue()">Shift</button>
+    <button onclick="sortArray()">Sort</button>
+    <button onclick="mergeArray()">Merge</button>
+    <button onclick="reverseArray()">Reverse</button>
+    <br><br>
+    <table id="myTable">
+        <tr>
+            <th>Index</th>
+            <th>Value</th>
+        </tr>
+    </table>
+
+    <script>
+        var myArray = [];
+
+        function updateTable() {
+            var table = document.getElementById("myTable");
+            table.innerHTML = ""; // Clear table contents
+
+            // Add table headers
+            var headerRow = table.insertRow(0);
+            var indexHeader = document.createElement("th");
+            indexHeader.textContent = "Index";
+            var valueHeader = document.createElement("th");
+            valueHeader.textContent = "Value";
+            headerRow.appendChild(indexHeader);
+            headerRow.appendChild(valueHeader);
+
+            // Add table rows
+            for (var i = 0; i < myArray.length; i++) {
+                var row = table.insertRow(i + 1);
+                var indexCell = row.insertCell(0);
+                indexCell.textContent = i;
+                var valueCell = row.insertCell(1);
+                valueCell.textContent = myArray[i];
+            }
+        }
+
+        function pushValue() {
+            var inputValue = document.getElementById("inputValue").value;
+            myArray.push(inputValue);
+            updateTable();
+        }
+
+        function popValue() {
+            myArray.pop();
+            updateTable();
+        }
+
+        function unshiftValue() {
+            var inputValue = document.getElementById("inputValue").value;
+            myArray.unshift(inputValue);
+            updateTable();
+        }
+
+        function shiftValue() {
+            myArray.shift();
+            updateTable();
+        }
+
+        function sortArray() {
+            myArray.sort();
+            updateTable();
+        }
+
+        function mergeArray() {
+            var inputValue = document.getElementById("inputValue").value;
+            var mergeArray = inputValue.split(",").map(item => item.trim());
+            myArray = myArray.concat(mergeArray);
+            updateTable();
+        }
+
+        function reverseArray() {
+            myArray.reverse();
+            updateTable();
+        }
+    </script>
+</body>
+</html>

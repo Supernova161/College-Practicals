@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function hov() {
+            var e=document.getElementById('hover');
+            e.style.display='none'
+            ;
+        }
+
+        function out() {
+            var e=document.getElementById('out');
+            e.style.display='none';
+        }
+
+        function focused() {
+            var e=document.getElementById('inp');
+            if(confirm('Got it?')) {
+                e.blur();
+            }
+        }
+
+        function myFunction() {
+  alert("You pressed a key inside the input field");
+}
+    </script>
+</head>
+<body>
+    <div id="hover"
+         onmouseover="hov()"
+         style="background-color:burlywood;
+                height:200px;
+                width:200px;">
+    </div>
+
+    <div id="out" onmouseout="out()" style="background-color:green;height:200px;width:200px;">
+    </div>
+
+    <input onchange="alert(this.value)"
+           type="number"
+           style="margin-left: 45%;">
+
+           <img onload="alert('Image completely loaded')"
+           alt="Image Not Loaded"
+           src="./Skills_Image.jpg"
+           style="height: 220px; width: 400px;">    
+           
+           <p style="margin-left: 45%;">
+            Take the focus into the input box below:
+        </p>
+        <input id="inp"
+               onfocus="focused()"
+               style=" margin-left: 45%;">    
+               
+               <h2>The onkeypress Event</h2>
+               <input type="text" onkeypress="myFunction()">
+</body>
+</html>

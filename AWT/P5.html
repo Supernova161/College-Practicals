@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('dancing_boat_image.jpg') center/cover no-repeat fixed;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px; 
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        input:invalid {
+            border-color: #E57373;
+        }
+
+        input:valid {
+            border-color: #81C784;
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post" >
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required pattern="[a-zA-Z0-9_-]{3,20}">
+        <small><!--3-20 characters, letters, numbers, underscores, and hyphens only.--></small>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" pattern=".+@(gmail\.com|yahoo\.com|outlook\.com)" size="30" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="6">
+        <small><!--Minimum length: 6 characters.--></small>
+        
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required minlength="6" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">&nbsp;&nbsp;
+        <small style="color: grey">At least one lowercase letter, one uppercase letter, one digit, and minimum length of 6 characters.</small>
+        
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

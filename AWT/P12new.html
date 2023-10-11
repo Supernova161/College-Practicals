@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Font Size Animation</title>
+</head>
+<body>
+  <div id="textElement">SILVER OAK UNIVERSITY</div>
+
+  <script>
+    // Get the element where you want to display the text
+    const textElement = document.getElementById('textElement');
+
+    // Set initial font size and color
+    let fontSize = 10; // Starting font size
+    textElement.style.fontSize = `${fontSize}px`;
+    textElement.style.color = 'blue';
+
+    // Function to increase font size at an interval
+    const increaseFontSize = () => {
+      if (fontSize <= 50) {
+        textElement.style.fontSize = `${fontSize}px`;
+        fontSize++;
+      } else {
+        clearInterval(intervalId);
+      }
+    };
+
+    // Start the interval
+    const intervalId = setInterval(increaseFontSize, 1000);
+  </script>
+</body>
+</html>

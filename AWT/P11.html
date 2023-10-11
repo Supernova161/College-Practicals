@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    transition: background-color 0.5s ease;
+  }
+</style>
+</head>
+<body>
+
+<h2>Changing Background Color</h2>
+
+<script>
+  // Array of colors to choose from
+  const colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+
+  function changeBackgroundColor() {
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    const randomColor = colors[randomIndex];
+    document.body.style.backgroundColor = randomColor;
+  }
+
+  // Change background color every 5 seconds (5000 milliseconds)
+  setInterval(changeBackgroundColor, 500);
+</script>
+
+</body>
+</html>

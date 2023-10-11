@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Alert() {
+                alert("An Online Computer Science"
+                            + " Portal ");
+            }
+
+            function Prompt() {
+                let x = prompt("Enter your mail here : ");
+                document.write("Your ID : " + x);
+            }
+
+            function Confirm() {
+                var x;
+                if (confirm("Press a button!") == true) {
+                    x = "OK pressed!";
+                } else {
+                    x = "Cancel!";
+                }
+                document.getElementById("confirm").innerHTML = x;
+            }
+    </script>
+</head>
+<body>
+    <h3>Alert Box</h3>
+        <button onclick="Alert()">
+            Click here for alert box
+        </button>
+
+    <h3>Prompt Box</h3>
+ 
+        <input type="button" onclick="Prompt();"
+        value="Click here for Prompt box"/>  
+        
+        <h3>Confirm Box</h3>
+ 
+        <button onclick="Confirm()">
+            Click here for Confirm box
+        </button>
+ 
+        <p id="confirm"></p>
+</body>
+</html>
