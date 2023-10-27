@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #this{
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="this" onclick="demo()"></div><br>
+
+    <select onchange="demo2()">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select><br><br>
+
+    <input type="text" onkeypress="demo3()"></input><br><br>
+
+    <input type="text" onfocus="demo4()"></input>
+
+    <script>
+        function demo(){
+            alert("Hello")
+        }
+        function demo2(){
+            alert("OnChange Event")
+        }
+        function demo3(){
+            alert("OnKeyPress Event")
+        }
+        function demo4(){
+            alert("OnFocus Event")
+        }
+    </script>
+</body>
+</html>
